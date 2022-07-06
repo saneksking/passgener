@@ -13,7 +13,7 @@ class PasswordGen:
             try:
                 printer.smart.echo('', show=True, char='*')
                 x = ''.join(random.choices(self.symbols,
-                                           k=int(input('Введите длинну пароля/Enter password length: '))))
+                                           k=abs(int(input('Введите длинну пароля/Enter password length: ')))))
                 printer.smart.echo('', show=True, char='*')
                 print(x)
                 printer.smart.echo('', show=True, char='*')

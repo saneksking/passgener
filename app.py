@@ -24,13 +24,12 @@ try:
             printer.smart.echo('From SaneksKing', show=True, char='*')
             menu1 = int(input('1: Generate password\n2: Change language\n3: Exit\n: '))
             if menu1 == 1:
+                cls.RandomPass()
                 printer.smart.echo('Password generated!', show=True, char='*')
                 cont = input('Press Enter to continue or -1 to exit!: ')
                 if cont == '-1':
                     printer.smart.echo('Program completed!', show=True, char='*')
                     break
-                else:
-                    continue
             elif menu1 == 2:
                 continue
             elif menu1 == 3:
@@ -38,6 +37,8 @@ try:
         elif menu == 3:
             printer.smart.echo('Программа завершена!', show=True, char='*')
             break
+        else:
+            print('Неверный ввод!!!')
 except ValueError:
     printer.smart.echo('Вы ввели не число/You didn\'t enter a number!'
                        ' Программа завершилась/Program ended!', show=True, char='*')
