@@ -12,10 +12,13 @@ class PasswordGen:
         while 1:
             try:
                 printer.smart.echo('', show=True, char='*')
-                x = ''.join(random.choices(self.symbols, k=int(input('Введите длинну пароля/Enter password length: '))))
+                x = ''.join(random.choices(self.symbols,
+                                           k=int(input('Введите длинну пароля/Enter password length: '))))
                 printer.smart.echo('', show=True, char='*')
                 print(x)
                 printer.smart.echo('', show=True, char='*')
+                if x:
+                    break
             except ValueError:
                 printer.smart.echo('', show=True, char='*')
                 print('Вы ввели не число/You didn\'t enter a number!')
