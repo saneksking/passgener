@@ -29,12 +29,17 @@ class Menu:
                 printer.smart.echo('', show=True, char='*')
                 menu = int(input('1: Сгенерировать пароль\n2: Сменить язык\n3: Выход\n: '))
                 if menu == 1:
+                    printer.smart.echo('', show=True, char='*')
                     pass_length = abs(int(input('Длинна пароля: ')))
                     if pass_length:
                         password = PassGen.generate(pass_length)
+                        printer.smart.echo('', show=True, char='*')
                         print(password)
+                        printer.smart.echo('', show=True, char='*')
                         printer.smart.echo('Пароль сгенерирован!', show=True, char='*')
+                        printer.smart.echo('', show=True, char='*')
                         cont = input('Нажмите Enter для продолжения или -1 для выхода!: ')
+                        printer.smart.echo('', show=True, char='*')
                         if cont == '-1':
                             break
                         else:
@@ -42,8 +47,18 @@ class Menu:
                     else:
                         print('Вы ввели не число!')
                         continue
-
                 elif menu == 2:
+                    Menu.switch_lang()
+                    printer.smart.echo('', show=True, char='*')
+                    vib = input('Enter Для продолжения...')
+                    if vib == '':
+                        continue
+                    else:
+                        continue
+                elif menu == 3:
+                    break
+        except ValueError as e:
+            printer.smart.echo(f'Программа завершенна из за ошибки {e}!', show=True, char='*')
 
 
 def main():
